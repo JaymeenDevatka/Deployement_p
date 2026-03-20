@@ -9,6 +9,7 @@ docker-compose up -d
 ```
 
 Then open:
+
 - API: http://localhost:8000
 - Nginx: http://localhost
 - Admin: http://localhost:8000/admin

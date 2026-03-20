@@ -62,6 +62,7 @@ docker-compose up -d
 ```
 
 **What happens:**
+
 1. Nginx starts on port 80 (reverse proxy)
 2. Django app runs on port 8000
 3. Database migrations run automatically
@@ -128,18 +129,23 @@ docker run -d -p 8000:8000 notes-app:latest
 ## Interview Talking Points
 
 ### 1. Architecture & Design
+
 "The app follows MVC pattern. The Django REST Framework handles serialization of Note objects to JSON, views manage business logic, and URLs route requests. Nginx acts as a reverse proxy sitting in front of the Django app for better performance and security."
 
 ### 2. Database & ORM
+
 "We use Django's ORM with SQLite for dev and MySQL for production. All schema changes go through migrations, ensuring consistent deployment across environments."
 
 ### 3. Containerization
+
 "Docker Compose orchestrates multiple services - the app, database, and reverse proxy all run in isolated containers. This ensures the app runs the same way locally, in testing, and in production."
 
 ### 4. DevOps & Deployment
+
 "The Jenkinsfile suggests CI/CD automation - tests run on commits, Docker images build automatically, and deployment is orchestrated. This follows continuous integration best practices."
 
 ### 5. Scalability
+
 "Gunicorn can handle multiple worker processes, Nginx can load-balance across app instances, and the stateless design allows horizontal scaling."
 
 ---
